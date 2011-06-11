@@ -1,0 +1,1350 @@
+/* Copyright 2009, Red Hat, Inc.
+ *
+ * Portions adapted from Mx's data/style/default.css
+ *   Copyright 2009 Intel Corporation
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms and conditions of the GNU Lesser General Public License,
+ * version 2.1, as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for
+ * more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin St - Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ * -------------------------------------------------------------------------
+ *
+ * Thanks to Sean Wilson http://half-left.deviantart.com/ for his effort
+ * in custom gnome-shell theming, helping to inspire this one.
+ *
+ * -------------------------------------------------------------------------
+ *
+ *                  This gnome-shell theme is Amrita,
+ *                        by Garrett LeSage
+ *                      http://linuxart.com/
+ *
+ * -------------------------------------------------------------------------
+ *
+ */
+
+
+// Set up useful SASS variables
+
+$selected: #386798
+$selected-highlight: #4d93df
+$selected-text: white
+$input-background: white
+$text: #32383a
+
+/* Set the stage (har har) */
+
+stage
+  font-family: ubuntu, cantarell, sans-serif
+
+.shell-link
+  color: $selected
+  text-decoration: underline
+  &:hover
+    color: $selected-highlight
+
+.label-shadow
+  color: rgba(black, 0.5)
+
+
+/* Scrollbars! */
+
+StScrollBar
+  padding: 0
+
+StScrollView StScrollBar
+  min-width: 16px
+  min-height: 16px
+
+StScrollBar
+  StBin#trough
+    background-color: rgba(black, 0.1)
+    border: 1px solid rgba(white, 0.05)
+    border-radius: 9px
+    box-shadow: inset 0 0 6px 0 rgba(black, 0.4)
+  StButton
+    &#vhandle
+      background-gradient-direction: horizontal
+    &#hhandle
+      background-gradient-direction: vertical
+    &#vhandle, &#hhandle
+      background-gradient:
+        start: #aaa
+        end: #555
+      border: 1px solid #555
+      border-radius: 9px
+      box-shadow: inset 0 0 1px 1px rgba(white, 0.2)
+      &:hover
+        background-graident:
+          start: #ddd
+          end: #777
+
+
+/* Tooltips */
+
+StTooltip StLabel
+  background-color: rgba(50,50,50,0.8)
+  color: rgba(white, 0.9)
+  text-shadow: black 0 0 2px 0
+  box-shadow: 0 0 2px 0 rgba(black, 0.5)
+  border: 1px solid rgba(black, 0.1)
+  border-radius: 4px
+  padding: 4px 6px
+  font-size: 0.9em
+  font-weight: normal
+  text-align: center
+
+
+/* PopupMenu */
+
+.popup-menu-boxpointer
+  -arrow-rise: 5px
+  border: 1px solid rgba(white, 0.1)
+
+.popup-menu-boxpointer,
+.summary-boxpointer
+  border-radius: 0 0 6px 6px
+  background-color: rgba(80, 80, 80, 0.8)
+  color: rgba(white, 0.8)
+  box-shadow: outset 0 0 9px 0 black
+  -arrow-base: 40px
+
+.summary-boxpointer
+  /* The popup's pointer (which we don't really use) */
+  -arrow-rise: 0
+  #notification
+  #summary-right-click-menu
+
+.popup-menu
+  color: rgba(white, 0.8)
+  font-size: 10.5pt
+
+.popup-sub-menu
+  background-color: rgba(black,0.2)
+  border: 0 solid rgba(black,0.1)
+  border-top-width: 1px
+  border-bottom-width: 1px
+
+.popup-menu-content
+
+.popup-menu-item
+  $menu-shadow: rgba(black, 0.75) 1px 1px 3px 0
+  padding: 6px 12px 6px 24px
+  spacing: 1em
+  color: white - #1a1a1a
+  text-shadow: $menu-shadow
+  icon-shadow: $menu-shadow
+  &:active
+    background-gradient:
+      direction: vertical
+      start: $selected-highlight
+      end: $selected
+    outline-top: 1px solid $selected
+    color: white
+  &:last-child
+    border-radius: 0 0 6px 6px
+    outline-radius: 0 0 6px 6px
+
+.popup-image-menu-item
+
+.popup-separator-menu-item
+  background-color: rgba(white, 0.1)
+  border-top: 1px solid rgba(black, 0.2)
+  height: 1px
+
+.popup-alternating-menu-item:alternate
+  font-weight: bold
+
+.popup-slider-menu-item
+  height: 1em
+  min-width: 15em
+  -slider:
+    height: 0.2em
+    border-width: 1px
+    handle-radius: 0.5em
+    border-color: rgba(white, 0.3)
+    background-color: rgba(#333, 0.5)
+    active:
+      background-color: $selected-highlight
+      border-color: $selected-highlight + #222
+
+
+/* Battery, etc. */
+
+.popup-device-menu-item
+  spacing: 0.5em
+
+.popup-menu-icon
+  icon-size: 1.14em
+
+
+/* On/off switches (used in menus) */
+
+.toggle-switch
+  width: 65px
+  height: 22px
+
+.toggle-switch-us
+  background-image: url("toggle-off-us.svg")
+  &:checked
+    background-image: url("toggle-on-us.svg")
+
+.toggle-switch-intl
+  background-image: url("toggle-off-intl.svg")
+  &:checked
+    background-image: url("toggle-on-intl.svg")
+
+
+/* Panel */
+
+#panel
+  color: white
+  background-gradient:
+    direction: vertical
+    start: rgba(black, 0.4)
+    end: rgba(#555, 0.5)
+  border: 0 solid rgba(black, 0.4)
+  border-bottom: 1px
+  font-size: 10.5pt
+  height: 1.86em
+  box-shadow: inset 0 0 1px 1px rgba(white, 0.15)
+
+#panelLeft, #panelCenter, #panelRight
+
+#panelLeft
+  &:ltr
+    padding-right: 4px
+  &:rtl
+    padding-left: 4px
+
+#panelRight
+  &:ltr
+    padding-left: 4px
+  &:rtl
+    padding-right: 4px
+
+#appMenu
+  spacing: 4px
+  padding: 0 12px
+
+.panel-button
+  #appMenuIcon
+    app-icon-bottom-clip: 0
+  &:active, &:checked, &:focus
+    #appMenuIcon
+      //app-icon-bottom-clip: 2px
+
+.app-menu-icon
+  width: 24px
+  height: 24px
+
+.panel-button
+  $panel-shadow: rgba(black,0.75) 0 1px 2px 0
+  $color: white - #222
+  padding: 0 12px
+  font-weight: bold
+  color: $color
+  transition-duration: 200ms
+  text-shadow: $panel-shadow
+  > .system-status-icon
+    color: $color
+    icon-shadow: $panel-shadow
+
+  &:active, &:checked, &:focus
+    background-color: rgba(200, 200, 200, 0.3)
+
+  &:active, &:checked, &:focus, &:hover
+    color: white
+    > .system-status-icon
+      color: white
+
+#statusTray
+  > .panel-button
+    &:active, &:checked, &:focus
+
+#legacyTray
+  spacing: 14px
+  padding-left: 14px
+  &:rtl
+    padding-left: 0
+    padding-right: 14px
+  &:compact
+    spacing: 9px
+
+.system-status-icon
+  icon-size: 1.14em
+
+
+/* The rounded panel corners we draw don't
+ * support transitions, so disable transitions
+ * for the buttons at the left/right edges */
+
+#panelActivities, #panelStatus
+  //transition-duration: 0
+
+#panelStatusMenu
+  spacing: 4px
+
+
+/* Overview */
+
+#overview
+  spacing: 12px
+  /* This is where the background screening comes in */
+  background-color: rgba(#555, 0.5)
+
+.workspaces-view
+  color: white
+  spacing: 25px
+
+.workspace-controls
+  visible-width: 32px
+  /* Amount visible before hovering */
+
+.workspace-thumbnails-background
+  padding: 9px 6px 9px 9px
+  background-color: rgba(white, 0.3)
+  border: 1px solid rgba(black,0.1)
+  border-right: 0
+  border-radius: 9px 0 0 9px
+  box-shadow: inset 1px 0 1px 0 rgba(white, 0.4)
+  &:ltr
+    box-shadow-right: 0
+  &:rtl
+    box-shadow-left: 0
+    border-radius: 0 9px 9px 0
+
+.workspace-thumbnails
+  spacing: 6px
+
+.workspace-thumbnail-indicator
+  border: 3px solid rgba(white, 1)
+  box-shadow: inset 0 0 1px 1px rgba(black, 0.2)
+  border-radius: 2px
+
+.window-caption
+  background-color: rgba(100,100,100, 0.8)
+  border: 1px solid rgba(white, 0.1)
+  border-radius: 4px
+  color: rgba(white, 0.7)
+  font-size: 9pt
+  padding: 3px 9px
+  -shell-caption-spacing: 6px
+
+.window-close
+  background-image: url("close-window.svg")
+  height: 34px
+  width: 34px
+  -shell-close-overlap: 20px
+  &:rtl
+    -st-background-image-shadow: 2px 2px 6px rgba(black, 0.5)
+  &:hover
+    background-image: url("close-window-hover.svg")
+
+
+/* Dash */
+
+#dash
+  //color: rgba(white, 0.7)
+  font-size: 11pt
+  padding: 3px 0
+  background-color: rgba(white, 0.3)
+  border: 1px solid rgba(black,0.1)
+  border-left: 0
+  border-radius: 0 9px 9px 0
+  box-shadow: inset -1px 0 1px 0 rgba(white, 0.4)
+  &:ltr
+    box-shadow-left: 0
+  &:rtl
+    box-shadow-right: 0
+    border:
+      left: 1px
+      right: 0
+      radius: 9px 0 0 9px
+  &:empty
+    height: 100px
+    width: 60px
+
+.dash-placeholder
+  background-image: url("dash-placeholder.svg")
+  height: 27px
+  width: 48px
+
+
+/* Overview mode - Tab & window switcher area */
+
+#viewSelector
+  spacing: 1em
+  font-size: 12pt
+
+
+/* Overview mode - Tab switcher */
+
+#viewSelectorTabBar
+  padding: 3px
+
+.view-tab-title
+  color: rgba($selected-text, 0.75)
+  font-weight: bold
+  border-radius: 9px
+  padding: 6px 18px
+  border: 1px solid transparent
+  &:hover
+    color: $selected-text
+  &:selected
+    color: $selected-text
+    background-color: $selected-highlight
+    border: 1px solid $selected
+    padding:
+      top: 4px
+      bottom: 4px
+
+
+/* Search */
+
+#searchArea
+  padding: 0 24px
+
+#searchEntry
+  padding: 4px 12px
+  border-radius: 9px
+  color: rgb(44, 44, 44)
+  color: #999
+  border: 1px solid rgba(black, 0.5)
+  background-color: $input-background
+  caret:
+    color: rgb(128, 128, 128)
+    size: 1px
+  width: 250px
+  transition-duration: 300
+  box-shadow: inset 0 1px 2px rgba(black, 0.3)
+  &:focus, &:hover
+    //color: #444
+    border: 1px solid rgba(black, 0.5)
+    background-color: $input-background
+    caret:
+      color: rgb(128, 128, 128)
+      size: 1px
+    transition-duration: 300
+    box-shadow: inset 0 1px 2px rgba(black, 0.5)
+  &:focus
+    color: rgb(64, 64, 64)
+    //font-weight: bold
+    transition-duration: 0
+
+.search-entry-icon
+  icon-size: 1em
+  color: #8d8f8a
+
+#searchResults
+  padding: 20px 26px 10px 0
+  spacing: 18px
+
+#searchResultsContent
+  padding-right: 21px
+  spacing: 36px
+  border-radius: 0
+  box-shadow: inset 0 0 1px 1px rgba(white, 0.6)
+  &:rtl
+    padding:
+      right: 0
+      left: 21px
+
+.search-statustext, .search-section-header
+  padding: 9px 12px
+  spacing: 3px
+  font-weight: bold
+  color: rgba(white, 0.75)
+  text-shadow: black 0 0 3px
+  font-size: 0.8em
+  border:
+    top: 0
+    left: 0
+    radius: 9px 9px 0 0
+
+.search-section-results
+  color: $text
+  padding: 6px
+
+.search-section-list-results
+  spacing: 3px
+
+.results-container
+  spacing: 0
+
+.search-providers-box
+  spacing: 12px
+
+.dash-search-button
+
+.dash-search-button-label
+
+
+/* Apps */
+
+.icon-grid
+  spacing: 33px
+  -shell-grid-item-size: 126px
+  .overview-icon
+    icon-size: 96px
+
+.all-app
+  padding: 15px 24px 15px 15px
+  spacing: 24px
+  &:rtl
+    padding-right: 15px
+    padding-left: 24px
+
+.app-filter
+  font-size: 10.5pt
+  text-shadow: black 0 0 3px 3px
+  height: 2.85em
+  color: rgba(white, 0.75)
+  width: 200px
+  &:hover
+    color: rgba(white, 0.9)
+    //text-decoration: underline
+  &:selected
+    font-weight: bold
+    color: white
+    background-image: url("filter-selected-ltr.svg")
+    background-position: 190px 10px
+    &:rtl
+      background-image: url("filter-selected-rtl.svg")
+      background-position: 10px 10px
+  &:focus
+    outline: 1px solid #aaa
+
+.dash-item-container > .app-well-app
+
+.overview-icon
+  padding: 3px 6px
+  padding-left: 9px
+
+.app-well-app,
+.remove-favorite,
+.search-result-content
+  > .overview-icon
+    border-radius: 4px
+    padding: 3px
+    border: 1px transparent
+    font-size: 9pt
+    text-align: center
+    text-shadow: rgba(black, 0.5) 0 0 3px 1px
+
+.app-well-app,
+.search-result-content
+  > .overview-icon
+    color: rgba(white, 0.75)
+  &:hover
+    > .overview-icon
+      color: white
+
+.remove-favorite-icon
+  color: rgba(white, 0.5)
+  icon-shadow: 1px 0 4px 1px rgba(black, 0.5)
+  &:hover
+    color: rgba(white, 0.75)
+
+.app-well-app
+  > .overview-icon
+    //border: 1px solid transparent
+    text-shadow: rgba(black,0.8) 0 0 3px 2px
+  &.running
+    & > .overview-icon
+      //background: url("running-applist.svg")
+      font-weight: bold
+      border: 1px solid rgba(253,243,162,0.3)
+      background: rgba(253,243,162,0.15)
+  &:selected > .overview-icon
+    background-color: rgba(white, 0.33)
+  &:hover > .overview-icon
+    icon-shadow: rgba(black,1) 0 0 1px 1px
+  &:hover
+    background: url("app-hover.png")
+
+.dash-item-container
+  /* Alternate running icon for icons in the dash */
+  .running > .overview-icon
+    border: none
+    background: url("running.svg")
+
+.dash-item-container
+  .overview-icon
+
+.search-result-content
+  &:selected > .overview-icon
+    background-color: rgba(white, 0.33)
+
+.app-well-app,
+.remove-favorite,
+.search-result-content
+  &:hover> .overview-icon
+
+.app-well-app,
+.search-result-content
+  &:focus > .overview-icon
+
+.app-well-menu
+  font-size: 9pt
+
+
+/* LookingGlass */
+
+#LookingGlassDialog
+  background-color: rgba(black, 0.85)
+  spacing: 4px
+  padding: 4px
+  border: 2px solid grey
+  border-radius: 4px
+  color: #88ff66
+  > #Toolbar
+    border: 1px solid grey
+    border-radius: 4px
+  .labels
+    spacing: 4px
+  .notebook-tab
+    padding: 2px
+    &:hover
+      color: #00ff00
+    &:selected
+      border: 1px solid #88ff66
+      border-radius: 4px
+      padding: 5px
+  .lg-inspector-title
+    font-weight: bold
+    padding-bottom: 9px
+
+.lg-dialog
+  StLabel, StEntry
+    color: #88ff66
+
+.lg-obj-inspector-title
+  spacing: 4px
+
+.lg-obj-inspector-button
+  border: 1px solid #88ff66
+  padding: 4px
+  border-radius: 4px
+  &:hover
+    border: 1px solid #00ff00
+
+.lg-dialog .shell-link
+  color: #88ff66
+  &:hover
+    color: #00ff00
+
+#LookingGlassDialog StBoxLayout
+  &#EvalBox
+    padding: 4px
+    spacing: 4px
+  &#ResultsArea
+    spacing: 4px
+
+#lookingGlassExtensions
+  padding: 4px
+
+.lg-extension-list
+  padding: 4px
+  spacing: 6px
+
+.lg-extension
+  border: 1px solid #6f6f6f
+  border-radius: 4px
+  padding: 4px
+
+.lg-extension-name
+  font-weight: bold
+
+.lg-extension-actions
+  spacing: 6px
+
+#LookingGlassPropertyInspector
+  background: rgba(black, 0.9)
+  border: 2px solid grey
+  border-radius: 4px
+  padding: 6px
+  color: #88ff66
+
+
+/* Calendar popup */
+
+#calendarArea
+  padding: 6px 12px 0
+  /* this is the width of the entire popup */
+  width: 35em
+
+.calendar-vertical-separator
+  -stipple-width: 1px
+  -stipple-color: #505050
+  width: 2em
+
+#calendarPopup
+  border-radius: 5px
+  background: rgba(black, 0.9)
+  border: 1px solid rgba(128, 128, 128, 0.45)
+  color: white
+  .calendar
+    padding: 10px
+
+.calendar
+  spacing-rows: 0
+  spacing-columns: 2px
+  border-radius: 3px
+  box-shadow: outset 1px 1px 2px 0 rgba(black, 0.25)
+  background: white
+  border-radius: 12px 12px 6px 6px
+  padding: 0
+
+  &>*
+    text-align: center
+    vertical-align: middle
+
+    &:first-child
+      border-color: #7c0000
+      border-radius: 6px 6px 0 0
+      box-shadow: inset 0 0 1px rgba(black, 0.25)
+      background-gradient:
+        direction: vertical
+        start: #cc0000
+        end: #a40000
+
+.calendar-month-label
+  color: white
+  font-size: 1em
+  padding-top: .25em
+
+.calendar-change-month-back,
+.calendar-change-month-forward
+  width: 2em
+  height: 2em
+  border-radius: 4px
+
+.calendar-change-month-back
+  background-image: url("calendar-arrow-left.svg")
+  &:rtl
+    background-image: url("calendar-arrow-right.svg")
+  &:hover, &:active
+
+.calendar-change-month-forward
+  background-image: url("calendar-arrow-right.svg")
+  &:rtl
+    background-image: url("calendar-arrow-left.svg")
+  &:hover, &:active
+
+.datemenu-date-label
+  padding: .5em 1.75em 0.75em
+  font-size: 10.5pt
+
+.calendar-day-base
+  width: 2.5em
+  height: 2.5em
+  color: black
+  font-size: 7.5pt
+  text-align: center
+  border: 1px solid transparent
+  &:hover
+    background-color: #fef5ae
+  &:active
+    background-gradient:
+      direction: vertical
+      start: $selected-highlight
+      end: $selected
+    color: $selected-text
+
+.calendar-day-heading
+  color: #a40000
+  height: 1em
+
+.calendar-week-number
+  color: #888a85
+  width: auto
+  height: 2em
+  background-color: #eee
+  border: 1px solid #d3d7cf
+    bottom: 0
+    top: 0
+    left: 0
+  padding-top: 9px
+
+.calendar-day
+  color: #555753
+  border-radius: 1.3em
+
+.calendar-day-top
+
+.calendar-day-left
+
+.calendar-work-day
+
+.calendar-nonwork-day
+
+.calendar-today
+  border: 1px solid #ccc
+  font-weight: bold
+  background-color: #eee
+  &:active
+    border-color: $selected
+    box-shadow: inset 0 0 1px 1px $selected-highlight
+
+.calendar-other-month-day
+  color: rgba(black, 0.2) !important
+
+.calendar-day-with-events
+  font-weight: bold
+  color: black
+
+.events-header-vbox
+  padding: .6em 0 0
+  spacing: 9px
+
+.events-header
+  height: 40px
+
+.events-header-hbox
+  padding: 0.3em
+
+.events-day-header
+  font-size: 9pt
+  padding-left: 0.3em
+  &:rtl
+    padding-left: 0em
+    padding-right: 0.3em
+
+.events-day-dayname
+  font-size: 9pt
+  text-align: left
+  &:rtl
+    text-align: right
+
+.events-day-time
+  font-size: 9pt
+  color: rgba(white, 0.5)
+  text-align: right
+  &:rtl
+    text-align: left
+
+.events-day-task
+  font-size: 9pt
+  color: rgba(white, 1)
+
+.events-day-name-box
+  width: 20px
+
+.events-time-box
+  width: 70px
+  padding-right: 9px
+  &:rtl
+    padding-right: 0
+    padding-left: 9px
+
+.events-event-box
+
+.url-highlighter
+  link-color: #ccccff
+
+
+/* Message Tray */
+
+#message-tray
+  height: 36px
+  color: white
+
+#notification
+  font-size: 12pt
+  border-radius: 6px 6px 0 0
+  background-color: white
+  border: 1px solid rgba(black,0.25)
+  color: black
+  padding: 9px 9px 6px 9px
+  spacing-rows: 9px
+  spacing-columns: 9px
+  min-width: 9em
+  max-width: 24em
+  box-shadow: outset 0 0 6px 0 black
+
+.multi-line-notification
+  padding-bottom: 9px
+
+#notification-body,
+#notification-scrollview,
+#notification-actions
+
+#notification-scrollview
+  max-height: 15em
+  >
+    .top-shadow, .bottom-shadow
+      height: 1em
+  &:ltr > StScrollBar
+    padding-left: 6px
+  &:rtl > StScrollBar
+    padding-right: 6px
+
+#notification-body, #notification-actions
+
+.notification-button,
+.notification-icon-button
+  /*
+    background-gradient:
+      direction: vertical
+      start: #f1f4f1
+      end: #e0e7df
+    border-radius: 6px
+    border: 1px solid #a5b1a5
+    box-shadow: inset 0 0 1px 1px rgba(white, 0.6)
+    padding: 5px
+    &:hover, &:focus, &:active
+    */
+
+  > StIcon
+    icon-size: 36px
+
+.chat-received,
+.chat-sent,
+.chat-meta-message
+  padding: 0.75ex 12px
+  font-size: 10pt
+
+  &:rtl
+    //padding-left: 0
+    //padding-right: 6px
+
+.chat-received
+  color: #4e9a06
+  background-color: #e2f8cc
+
+.chat-sent
+  color: $text + #333
+  //text-align: right
+
+.chat-meta-message
+  font-size: 8pt
+  color: #aaa
+
+
+/* The spacing and padding on the summary is tricky; we want to keep
+ * the icons from touching each other or the edges of the screen, but
+ * we also want them to be "Fitts"-y with respect to the edges, so the
+ * summary area's bottom and right padding must actually be part of
+ * the icons. However, we can't put *all* of the padding into the
+ * icons, because then the summary would be 0x0 when there were no
+ * icons in it, and so you wouldn't be able to hover over it to
+ * activate it.
+ *
+ * Also, the spacing between a summary-source's icon and title is
+ * actually specified as padding-left in source-title, because we
+ * want the spacing to collapse along with the title. */
+
+#summary-mode
+  padding: 2px 0 0 4px
+  height: 36px
+  &:rtl
+    padding: 2px 4px 0 0
+
+.summary-source-button
+  /* These are the little notification items in the bottom-right */
+  text-shadow: black 0 0 4px 0
+  background-color: rgba(black,0.5)
+  border: 1px solid rgba(black,0.25)
+    right: 0
+    bottom: 0
+    left: 0
+  &:ltr
+    padding-left: 4px
+    padding-right: 16px
+  &:rtl
+    padding-right: 4px
+    padding-left: 16px
+  &:last-child
+    &:ltr
+      padding-right: 12px
+    &:rtl
+      padding-left: 12px
+  &:first-child
+    border-radius-topleft: 6px
+    border-left: 1px
+
+.source-title
+  font-size: 9pt
+  font-weight: bold
+  padding-left: 4px
+  &:rtl
+    padding-left: 0
+    padding-right: 4px
+
+
+/* Alt-tab app Switcher */
+
+#altTabPopup
+  padding: 3px 12px
+  spacing: 16px
+
+.switcher-list
+  background-color: rgba(#777, 0.95)
+  border: 1px solid rgba(black, 0.5)
+  border-radius: 9px
+  box-shadow: inset 0 0 0 1px rgba(white, 0.25)
+  padding: 18px
+  font-size: 9pt
+  color: rgba(white, 0.75)
+
+  .item-box
+    padding: 9px
+    border-radius: 9px
+    border: 1px solid transparent
+    &:outlined
+      //padding: 6px
+      border: 1px solid rgba($selected, 0.5)
+      box-shadow: inset 0 0 0 1px rgba(white, 0.1)
+      background-gradient:
+        direction: vertical
+        start: rgba($selected-highlight, 0.5)
+        end: rgba($selected, 0.5)
+    &:selected
+      border: 1px solid $selected
+      box-shadow: inset 0 0 0 1px rgba(white, 0.15)
+      text-shadow: 1px 1px 3px 0 rgba(black, 0.5)
+      background-gradient:
+        direction: vertical
+        start: $selected-highlight
+        end: $selected
+      color: $selected-text
+  .thumbnail-box
+    padding: 0
+    spacing: 0
+  .thumbnail
+    width: 192px
+  .separator
+    width: 1px
+    background: rgba(white, 0.2)
+    border-left: 1px solid rgba(#555, 0.0125)
+
+.switcher-list-item-container
+  spacing: 6px
+
+.thumbnail-scroll-gradient-left,
+.thumbnail-scroll-gradient-right
+  background-gradient-direction: horizontal
+  border-radius: 24px
+  width: 60px
+
+.thumbnail-scroll-gradient-left
+  background-gradient:
+    start: rgba(#555, 1)
+    end: rgba(#999, 0)
+  border-radius:
+    topright: 0
+    bottomright: 0
+
+.thumbnail-scroll-gradient-right
+  background-gradient:
+    start: rgba(#555, 0)
+    end: rgba(#555, 1)
+  border-radius:
+    topleft: 0
+    bottomleft: 0
+
+.switcher-arrow
+  border-color: rgba(black, 0)
+  color: rgba(white, 0.5)
+  &:highlighted
+    border-color: rgba(black, 0)
+    color: white
+
+
+/* Ripple effect when the mouse slams into the top-left corner */
+
+.ripple-box
+  width: 52px
+  height: 52px
+  background-image: url("corner-ripple.svg")
+  &:rtl
+    background-image: url("corner-ripple-rtl.svg")
+
+
+/* Workspace Switcher */
+
+.workspace-switcher-group
+  padding: 12px
+
+.workspace-switcher-container
+  background-color: rgba(#777, 0.9)
+  border: 1px solid rgba(black, 0.5)
+  border-radius: 9px
+  box-shadow: inset 0 0 0 1px rgba(white, 0.25)
+  padding: 20px
+
+.workspace-switcher
+  background: transparent
+  border: 0
+  border-radius: 0
+  padding: 0
+  spacing: 9px
+
+.ws-switcher-active-up, .ws-switcher-active-down
+  height: 100px
+  border: 1px solid rgba(#777, 0.5)
+  background: rgba(white, 0.6)
+  border-radius: 9px
+  box-shadow: inset 0 0 0 1px rgba(white, 0.3)
+
+.ws-switcher-active-up
+  background-image: url("ws-switch-arrow-up.svg")
+
+.ws-switcher-active-down
+  background-image: url("ws-switch-arrow-down.svg")
+
+.ws-switcher-box
+  height: 96px
+  border: 1px solid rgba(black, 0.2)
+  background-color: rgba(white, 0.1)
+  border-radius: 9px
+  box-shadow: inset 0 0 0 1px rgba(white, 0.1)
+
+
+/* Modal dialog boxes (common) */
+
+.modal-dialog,
+.run-dialog
+  background-color: rgba(white, 0.9)
+  font-size: 12pt
+  color: $text
+  border: 1px solid #555
+  border-radius: 9px
+  box-shadow: inset 0 0 1px 1px rgba(white, 0.6)
+  padding: 24px 36px
+
+/* Dialog buttons */
+.notification-button,
+.notification-icon-button,
+.dash-search-button,
+.modal-dialog-button
+  border-radius: 6px
+  color: $text
+  margin: 0 10px
+  padding: 9px 21px
+
+.notification-button,
+.notification-icon-button,
+.modal-dialog-button
+  border: 1px solid #a7aba7
+  background-gradient:
+    direction: vertical
+    start: #f3f5f3
+    end: #d9dcd9
+  font-size: 10.5pt
+
+  &:focus,
+  &:hover
+    background-gradient:
+      start: #fefefe
+      end: #e6eae6
+
+  &:focus
+    /* Default & keyboard nav button indication */
+    box-shadow: outset 0 0 1px 1px rgba($selected-highlight, 0.3)
+    &:hover
+      background-gradient:
+        start: #fefefe + #111
+        end: #e6eae6 + #090909
+
+  &:active,
+  &:pressed
+    background-gradient:
+      start: #c5cac5
+      end: #dcdedc
+    box-shadow: inset 0.5px 0.5px 1px 1px rgba(#a2a7a2, 0.5)
+    /* Make the button feel pressed in by shifting the text */
+    padding: 10px 20px 8px 22px
+
+.notification-button,
+.notification-icon-button
+  //font-size: 10pt
+  padding: 6px 12px
+  &:active, &:pressed
+    padding: 7px 11px 5px 13px
+
+.modal-dialog-button-box
+  spacing: 21px
+
+.dash-search-button
+  background: rgba(white, 0.2)
+  font-size: 12pt
+  width: 12em
+  &:hover
+    background: rgba(white, 0.5)
+    border-color: rgba(white, 0.75)
+  &:focus, &:active
+
+.dash-search-button-label
+
+
+/* Run Dialog */
+
+.run-dialog
+  padding: 18px 24px
+
+.run-dialog-label, .run-dialog-error-label
+  font-size: 9pt
+  padding-bottom: 1em
+
+.run-dialog-error-box
+  padding-top: 15px
+  spacing: 5px
+
+
+/* Text entries */
+
+.run-dialog-entry,
+.polkit-dialog-password-entry,
+#notification StEntry
+  font-size: 10.5pt
+  color: $text + #444
+  border: 1px solid rgba(black, 0.5)
+  border-radius: 4px
+  background-color: $input-background
+  box-shadow: inset 0.5px 0.5px 2px rgba(black, 0.4)
+  padding: 3px
+  caret-color: rgba($text, 0.75)
+  caret-size: 1px
+  &:focus
+    color: $text
+
+.run-dialog-entry
+  width: 23em
+
+
+/* Lightbox (the screening of the background behind dialogs) */
+
+.lightbox
+  background-color: rgba(50,50,50, 0.4)
+
+
+/* End Session Dialog */
+
+.end-session-dialog
+  spacing: 42px
+
+.polkit-dialog-headline,
+.end-session-dialog-subject
+  font-size: 12pt
+  font-weight: bold
+  padding: 6px 0 12px 12px
+  &:rtl
+    padding-left: 0
+    padding-right: 12px
+
+.polkit-dialog-description,
+.end-session-dialog-description
+  font-size: 10pt
+  color: $text + #222
+  padding-left: 12px
+  &:rtl
+    padding-right: 12px
+
+.end-session-dialog-logout-icon
+  border: 2px solid $text
+  border-radius: 5px
+  width: 32px
+  height: 32px
+
+.end-session-dialog-shutdown-icon
+  width: 32px
+  height: 32px
+
+.end-session-dialog-app-list
+  font-size: 10pt
+  max-height: 200px
+  padding: 42px 32px 0 48px
+  &:rtl
+    padding-right: 48px
+    padding-left: 32px
+
+.end-session-dialog-app-list-item
+  color: $text + #222
+  &:hover
+    color: $selected
+    .end-session-dialog-app-list-item-name
+      text-decoration: underline
+  &:ltr
+    padding-right: 1em
+  &:rtl
+    padding-left: 1em
+
+.end-session-dialog-app-list-item-icon
+  &:ltr
+    padding-right: 15px
+  &:rtl
+    padding-left: 15px
+
+.end-session-dialog-app-list-item-name
+  padding-top: 6px
+  font-size: 10pt
+
+.end-session-dialog-app-list-item-description
+  font-size: 8pt
+  color: $text + #444
+
+
+/* PolicyKit Authentication Dialog */
+
+.polkit-dialog
+  /* this is the width of the entire modal popup */
+  width: 500px
+
+.polkit-dialog-main-layout
+  spacing: 24px
+  padding: 10px
+
+.polkit-dialog-message-layout
+  spacing: 16px
+
+.polkit-dialog-user-layout
+  padding-left: 10px
+  spacing: 10px
+  &:rtl
+    padding-left: 0
+    padding-right: 10px
+
+.polkit-dialog-user-root-label
+  color: #ff0000
+
+.polkit-dialog-password-label
+  padding: 4px 0
+  &:ltr
+    padding-right: 0.5em
+  &:rtl
+    padding-left: 0.5em
+
+.polkit-dialog-error-label
+  font-size: 10pt
+  color: red
+  padding-bottom: 9px
+
+.polkit-dialog-info-label
+  font-size: 10pt
+  padding-bottom: 9px
+
+
+/* Intentionally left transparent to avoid dialog changing size */
+
+.polkit-dialog-null-label
+  font-size: 10pt
+  color: rgba(black, 0)
+  padding-bottom: 9px
+
+
+/* Magnifier */
+
+.magnifier-zoom-region
+  border: 2px solid rgba(128, 0, 0, 1)
+  &.full-screen
+    border-width: 0

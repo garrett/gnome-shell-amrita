@@ -1,0 +1,10 @@
+{ 
+   "shell-theme": {
+       "name": "Amrita", 
+       "author": "Garrett LeSage", 
+       "version": "0.9",
+       "type":   "custom",
+       "thumbnail": "preview.png", 
+       "url": "http://linuxart.com/" 
+   }
+} 
