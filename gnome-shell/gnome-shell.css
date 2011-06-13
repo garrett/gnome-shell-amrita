@@ -737,8 +737,7 @@ StTooltip StLabel {
   padding: 9px 9px 6px 9px;
   spacing-rows: 9px;
   spacing-columns: 9px;
-  min-width: 9em;
-  max-width: 24em;
+  width: 24em;
   box-shadow: outset 0 0 6px 0 black; }
 
 .multi-line-notification {
