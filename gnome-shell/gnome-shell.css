@@ -34,10 +34,12 @@
 stage {
   font-family: ubuntu, cantarell, sans-serif; }
 
+.url-highlighter,
 .shell-link {
-  color: #386798;
-  text-decoration: underline; }
+  color: #386798; }
+  .url-highlighter:hover,
   .shell-link:hover {
+    text-decoration: underline;
     color: #4d93df; }
 
 .label-shadow {
@@ -719,9 +721,6 @@ StTooltip StLabel {
   .events-time-box:rtl {
     padding-right: 0;
     padding-left: 9px; }
-
-.url-highlighter {
-  link-color: #ccccff; }
 
 /* Message Tray */
 #message-tray {

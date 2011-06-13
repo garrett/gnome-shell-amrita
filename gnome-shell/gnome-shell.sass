@@ -45,10 +45,11 @@ $text: #32383a
 stage
   font-family: ubuntu, cantarell, sans-serif
 
+.url-highlighter,
 .shell-link
   color: $selected
-  text-decoration: underline
   &:hover
+    text-decoration: underline
     color: $selected-highlight
 
 .label-shadow
@@ -848,8 +849,8 @@ StTooltip StLabel
 
 .events-event-box
 
-.url-highlighter
-  link-color: #ccccff
+//.url-highlighter
+  //link-color: $selected
 
 
 /* Message Tray */
