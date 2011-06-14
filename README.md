@@ -27,6 +27,14 @@ there is a new "Themes" tab the top (next to "Windows" and "Applications").
 Select "Themes" and then click on the Amrita theme to switch.
 
 
+Updating the theme to a new version
+-----------------------------------
+
+You can update this theme to the latest-and-greatest version from git by
+doing a `git pull` (if you checked out the theme using git). Otherwise, you
+may download a new version from the downloads area on github.com.
+
+
 Development
 -----------
 
